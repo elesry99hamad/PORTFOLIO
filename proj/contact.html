@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contact page for Your Name" />
+  <meta name="keywords" content="contact, email, portfolio" />
+  <meta name="author" content="Your Name" />
+  <title>Contact | Your Name</title>
+  <style>
+    /* Added border styles */
+    .contact-container {
+      display: flex;
+      gap: 2rem;
+      margin: 2rem auto;
+      max-width: 1200px;
+      padding: 0 1rem;
+    }
+    
+    .contact-info {
+      flex: 1;
+      padding: 2rem;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .contact-form-section {
+      flex: 1;
+      padding: 2rem;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    
+    .required {
+      color: #e74c3c;
+    }
+    
+    .submit-btn {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+    
+    .submit-btn:hover {
+      background-color: #2980b9;
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .social-icons a {
+      color: #3498db;
+      font-size: 1.5rem;
+    }
+    
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <script src="javas.js" defer></script>
+</head>
+
+
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">HAMAD HAMADS</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="survey.html">Survey</a></li>
+        <li><button onclick="toggleTheme()">Toggle Theme</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Contact Me</h2>
+      <p>Have a question or want to work together? Reach out using the form below or through my contact info.</p>
+    </section>
+
+    <div class="contact-container">
+      <!-- Get in Touch Section with Border -->
+      <section class="contact-info">
+        <h3>Get in Touch</h3>
+        <p>You can reach me through the following channels:</p>
+        <ul>
+          <li>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></li>
+          <li>Phone: +123 456 7890</li>
+          <li>Location: Your City, Your Country</li>
+        </ul>
+        
+        <div class="social-media">
+          <h4>Connect with me</h4>
+          <div class="social-icons">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Send Message Section with Border -->
+      <section class="contact-form-section">
+        <h3>Send a Message</h3>
+        <form id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Name <span class="required">*</span></label>
+            <input type="text" id="name" name="name" required placeholder="Your full name" />
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="your.email@example.com" />
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Brief subject" />
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message <span class="required">*</span></label>
+            <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+        <p id="formMessage" aria-live="polite"></p>
+      </section>
+    </div>
+  </main>
+
+ <footer class="footer">
+  <div class="footer-container">
+    <!-- Column 1 - About -->
+    <div class="footer-column">
+      <h3 class="footer-title">About Me</h3>
+      <p class="footer-about">I'm a tech professional specializing in cybersecurity and web development. I thrive in collaborative environments and enjoy solving complex problems with innovative solutions.</p>
+    </div>
+    
+    <!-- Column 2 - Quick Links -->
+    <div class="footer-column">
+      <h3 class="footer-title">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
+        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+        <li><a href="survey.html"><i class="fas fa-chevron-right"></i> Survey</a></li>
+      </ul>
+    </div>
+    
+    <!-- Column 3 - Connect -->
+    <div class="footer-column">
+      <h3 class="footer-title">Connect</h3>
+      <div class="social-icons">
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="www.instagram.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="mailto:hamadyabdallah255@gmail.com" aria-label="Email">
+  <i class="fas fa-envelope"></i>
+</a>
+      </div>
+      <div class="contact-info">
+        <p><i class="fas fa-map-marker-alt"></i> UNIVERSITY OF DODOMA, TANZANIA</p>
+        <p><i class="fas fa-phone"></i> +255 616 429 823</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>Hamad Hamad 2025 All rights are reserved <span class="heart">🧠</span>
+    </p>
+  </div>
+</footer>
+
+
+
+  <script>
+    // Form validation
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = this.name.value.trim();
+      const email = this.email.value.trim();
+      const message = this.message.value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const formMessage = document.getElementById('formMessage');
+
+      // Clear previous messages
+      formMessage.textContent = '';
+      
+      // Validate fields
+      if (!name || !email || !message) {
+        formMessage.textContent = 'Please fill in all required fields.';
+        formMessage.style.color = 'red';
+        return;
+      }
+      
+      if (!emailRegex.test(email)) {
+        formMessage.textContent = 'Please enter a valid email address.';
+        formMessage.style.color = 'red';
+        return;
+      }
+
+      // Success message
+      formMessage.style.color = 'green';
+      formMessage.textContent = 'Thank you for your message! I will get back to you soon.';
+
+      // Reset form
+      this.reset();
+      
+      // Clear success message after 5 seconds
+      setTimeout(() => {
+        formMessage.textContent = '';
+      }, 5000);
+    });
+  </script>
+</body>
+</html>

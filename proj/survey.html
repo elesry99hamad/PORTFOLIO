@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Survey page for Your Name's portfolio">
+  <title>Survey | Your Name</title>
+  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="javas.js" defer></script>
+ 
+</head>
+<body>
+    <style>
+        /* Survey Page Specific Styles */
+.survey-form {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.form-section {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.form-section legend {
+  padding: 0 0.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.rating-scale {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.rating-option {
+  display: flex;
+  align-items: center;
+}
+
+.scale-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.checkbox-group,
+.radio-group {
+  margin-top: 0.5rem;
+}
+
+.checkbox-option,
+.radio-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.checkbox-option input,
+.radio-option input {
+  margin-right: 0.5rem;
+}
+
+.range-container {
+  margin-top: 1rem;
+}
+
+.range-container input[type="range"] {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--light-gray);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--border-color);
+}
+
+output {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+    </style>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">HAMAD HAMAD</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="survey.html" class="active">Survey</a></li>
+        <li><button onclick="toggleTheme()">Toggle Theme</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Portfolio Survey</h2>
+      <p>Help me improve my portfolio by sharing your feedback. It only takes 2 minutes!</p>
+    </section>
+
+    <section class="survey-form">
+      <form id="portfolioSurvey">
+        <!-- Personal Information -->
+        <fieldset class="form-section">
+          <legend>Personal Information</legend>
+          
+          <div class="form-group">
+            <label for="name">Name (optional)</label>
+            <input type="text" id="name" name="name" placeholder="Your name">
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email (optional)</label>
+            <input type="email" id="email" name="email" placeholder="your.email@example.com">
+          </div>
+          
+          <div class="form-group">
+            <label for="role">Which best describes you?</label>
+            <select id="role" name="role">
+              <option value="" disabled selected>Select your role</option>
+              <option value="recruiter">Recruiter</option>
+              <option value="developer">Fellow Developer</option>
+              <option value="client">Potential Client</option>
+              <option value="student">Student</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <!-- Portfolio Feedback -->
+        <fieldset class="form-section">
+          <legend>Portfolio Feedback</legend>
+          
+          <div class="form-group">
+            <label>How would you rate my portfolio overall?</label>
+            <div class="rating-scale">
+              <label class="rating-option">
+                <input type="radio" name="rating" value="1"> 1
+              </label>
+              <label class="rating-option">
+                <input type="radio" name="rating" value="2"> 2
+              </label>
+              <label class="rating-option">
+                <input type="radio" name="rating" value="3"> 3
+              </label>
+              <label class="rating-option">
+                <input type="radio" name="rating" value="4"> 4
+              </label>
+              <label class="rating-option">
+                <input type="radio" name="rating" value="5"> 5
+              </label>
+              <div class="scale-labels">
+                <span>Poor</span>
+                <span>Excellent</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label>What did you like most about my portfolio? (Select all that apply)</label>
+            <div class="checkbox-group">
+              <label class="checkbox-option">
+                <input type="checkbox" name="likes" value="design"> Design/Layout
+              </label>
+              <label class="checkbox-option">
+                <input type="checkbox" name="likes" value="content"> Content Quality
+              </label>
+              <label class="checkbox-option">
+                <input type="checkbox" name="likes" value="projects"> Projects Showcase
+              </label>
+              <label class="checkbox-option">
+                <input type="checkbox" name="likes" value="navigation"> Easy Navigation
+              </label>
+              <label class="checkbox-option">
+                <input type="checkbox" name="likes" value="speed"> Loading Speed
+              </label>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="improvements">What could be improved?</label>
+            <textarea id="improvements" name="improvements" placeholder="Your suggestions..."></textarea>
+          </div>
+        </fieldset>
+
+        <!-- Additional Questions -->
+        <fieldset class="form-section">
+          <legend>Additional Questions</legend>
+          
+          <div class="form-group">
+            <label>How likely are you to recommend my portfolio to others?</label>
+            <div class="range-container">
+              <input type="range" id="recommend" name="recommend" min="0" max="10" step="1">
+              <div class="range-labels">
+                <span>0 - Not likely</span>
+                <span>10 - Very likely</span>
+              </div>
+              <output for="recommend" id="recommendValue">5</output>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="contact">May I contact you for follow-up questions?</label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="contact" value="yes"> Yes
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="contact" value="no" checked> No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="reset" class="btn btn-secondary">Reset</button>
+          <button type="submit" class="btn btn-primary">Submit Feedback</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Column 1 - About -->
+    <div class="footer-column">
+      <h3 class="footer-title">About Me</h3>
+      <p class="footer-about">I'm a tech professional specializing in cybersecurity and web development. I thrive in collaborative environments and enjoy solving complex problems with innovative solutions.</p>
+    </div>
+    
+    <!-- Column 2 - Quick Links -->
+    <div class="footer-column">
+      <h3 class="footer-title">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
+        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+        <li><a href="survey.html"><i class="fas fa-chevron-right"></i> Survey</a></li>
+      </ul>
+    </div>
+    
+    <!-- Column 3 - Connect -->
+    <div class="footer-column">
+      <h3 class="footer-title">Connect</h3>
+      <div class="social-icons">
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="mailto:you@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+      <div class="contact-info">
+        <p><i class="fas fa-map-marker-alt"></i> UNIVERSITY OF DODOMA, TANZANIA</p>
+        <p><i class="fas fa-phone"></i> +255 616 429 823</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>@ Hamad Hamad  2025 All rights are reserved🧠</span>
+    </p>
+  </div>
+</footer>
+
+
+  <script src="javas.js"></script>
+  <script>
+    // Survey-specific JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+      // Range input value display
+      const recommendSlider = document.getElementById('recommend');
+      const recommendValue = document.getElementById('recommendValue');
+      
+      recommendSlider.addEventListener('input', function() {
+        recommendValue.value = this.value;
+      });
+      
+      // Form submission
+      const surveyForm = document.getElementById('portfolioSurvey');
+      surveyForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Basic validation
+        const rating = document.querySelector('input[name="rating"]:checked');
+        if (!rating) {
+          alert('Please provide an overall rating');
+          return;
+        }
+        
+        // Here you would typically send the data to a server
+        // For now, we'll just show a thank you message
+        alert('Thank you for your feedback! Your responses have been recorded.');
+        this.reset();
+        recommendValue.value = '5'; // Reset the range display
+      });
+    });
+  </script>
+</body>
+</html>

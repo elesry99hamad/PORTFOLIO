@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio of Hamad Hamad">
+  <meta name="keywords" content="HTML, CSS, JavaScript, Portfolio">
+  <meta name="author" content="Hamad Hamad">
+  <title>Home | Hamad Hamad</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="javas.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">HAMAD HAMAD</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="survey.html">Survey</a></li>
+        <li><button onclick="toggleTheme()">Toggle Theme</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Centered Greeting Section -->
+    <section class="welcome-section">
+      <div class="welcome-content">
+        <h1 id="dynamic-greeting">Welcome</h1>
+        <p class="welcome-text">Thank you for visiting my portfolio. I'm a passionate developer specializing in web technologies and cybersecurity solutions.</p>
+      </div>
+    </section>
+
+    <!-- Multi-column Content Section -->
+    <section class="content-columns">
+      <!-- Column 1 - Image with Caption -->
+      <div class="content-column">
+        <div class="image-container">
+          <img src="cpt.jpg" alt="Hamad Hamad" class="profile-image">
+          <p class="image-caption">Hamad Hamad - Cybersecurity Specialist</p>
+        </div>
+      </div>
+      
+      <!-- Column 2 - Paragraph Content -->
+      <div class="content-column">
+        <div class="text-content">
+          <h3>About My Work</h3>
+          <p>With expertise in both frontend development and cybersecurity, I create secure web applications that protect user data while delivering exceptional user experiences. My approach combines cutting-edge technology with robust security protocols.</p>
+          <p>Currently pursuing my degree at the University of Dodoma, I'm constantly expanding my knowledge in network security, ethical hacking, and modern web development frameworks.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+   <section class="video-section">
+  <h3>Watch My Introduction</h3>
+  <div class="video-container">
+    <video width="560" height="315" controls>
+      <source src="tech.mp4" type="video/mp4">
+      <source src="videos/intro-video.webm" type="video/webm">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+  <footer class="footer">
+  <div class="footer-container">
+    <!-- Column 1 - About -->
+    <div class="footer-column">
+      <h3 class="footer-title">About Me</h3>
+      <p class="footer-about">I'm a tech professional specializing in cybersecurity and web development. I thrive in collaborative environments and enjoy solving complex problems with innovative solutions.</p>
+    </div>
+    
+    <!-- Column 2 - Quick Links -->
+    <div class="footer-column">
+      <h3 class="footer-title">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
+        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+        <li><a href="survey.html"><i class="fas fa-chevron-right"></i> Survey</a></li>
+      </ul>
+    </div>
+    
+    <!-- Column 3 - Connect -->
+    <div class="footer-column">
+      <h3 class="footer-title">Connect</h3>
+      <div class="social-icons">
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="www.instagram.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="mailto:hamadyabdallah255@gmail.com" aria-label="Email">
+  <i class="fas fa-envelope"></i>
+</a>
+      </div>
+      <div class="contact-info">
+        <p><i class="fas fa-map-marker-alt"></i> UNIVERSITY OF DODOMA, TANZANIA</p>
+        <p><i class="fas fa-phone"></i> +255 616 429 823</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>Hamad Hamad 2025 All rights are reserved <span class="heart">🧠</span>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
